@@ -1,0 +1,35 @@
+---
+ - name: installing httpd using loop
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: installing apache httpd using loop
+             yum:
+                     name: "{{ item }}"
+                     state: installed
+             loop:
+                     - httpd
+                     - vim
+                     - nano
+                     - nfs-utils   
+            
+           - name: starting the services
+             service:
+                     name: "{{ item }}"
+                     state: started
+                     #permanent: yes
+                     #enabled: yes
+             loop:
+                      - httpd
+                      - nfs-utils
+          
+           - name: enabled http in  firewalld
+             firewalld:
+                     service: http
+                     state: enabled
+                     permanent: yes
+                     immediate: yes
+                     #loop:
+                     #- http  
+                     

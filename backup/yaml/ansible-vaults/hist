@@ -1,0 +1,37 @@
+ vi myplaybook.yaml
+  416  ansible-playbook myplaybook.yaml
+  417  ls
+  418  cat myvars.yaml
+  419  clear
+  420  vi myplaybook.yaml
+---
+ - name: We are testing Ansible Vault
+   hosts: appserver
+   become: yes
+   user: unnati
+   vars_files:
+        - myvars.yaml
+   tasks:
+        - name: Adding required group
+          group:
+                  name: "{{ mygroup }}"
+                  state: "{{ state1 }}"
+        - name: Adding required user to the group
+          user:
+                  name: "{{ myuser }}"
+                  state: "{{ state1 }}"
+                  groups: ["{{ mygroup }}",wheel]
+
+
+  422  vi myvars.yaml
+---
+ - mygroup: devops
+   myuser: engineer
+   state1: present
+
+  423  ansible-vault encrypt myvars.yaml
+  424  echo "centos" > mypass.txt
+  425  chmod 400 mypass.txt
+
+  434  ansible-playbook myplaybook.yaml --vault-password-file=mypass.txt
+

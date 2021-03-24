@@ -1,0 +1,5 @@
+---
+ - name: delete_home
+   file:
+         name: "{{ home }}"
+         state: "{{ state }}"

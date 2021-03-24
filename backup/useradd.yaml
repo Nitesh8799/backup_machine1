@@ -1,0 +1,10 @@
+---
+ - name: try 2 hosts which is 1st is debian and 2nd is rpm based os
+   hosts: ubuntu
+   user: admin
+   become: yes
+   tasks:
+           - name: useradd on ubuntu
+             user:
+                    name: saregamapadanisa
+                    state: present

@@ -1,0 +1,46 @@
+---
+ - name: create a partition
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: Create a 800Mb Partition
+             parted:
+                 device: /dev/sdb
+                 number: 1
+                 state: present
+                 part_start: 1MiB
+                 part_end: 801MiB
+          
+           - name: create a directory
+             file:
+                 name: /mnt/tasks1
+                 state: directory
+           
+           - name: ext4 format 
+             filesystem:
+                fstype: ext4
+                dev: /dev/sdb1
+           
+           - name: mounting the disk
+             mount:
+                 path: /mnt/tasks1
+                 src: /dev/sdb1
+                 fstype: ext4
+                 state: mounted 
+
+           - name: create a 500Mb partition
+             parted:
+                 device: /dev/sdb
+                 number: 2
+                 state: present
+                 part_type: primary
+                 part_start: 802MiB
+                 part_end: 1302MiB 
+
+           - name: make a swap partition
+             command : "{{ item }}" 
+             loop:    
+                  -  mkswap /dev/sdb2
+                  -  swapon /dev/sdb2
+             become_user: root   

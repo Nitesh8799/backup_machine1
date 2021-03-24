@@ -1,0 +1,5 @@
+---
+username: schwimmer
+state: present
+state1: installed
+pkg: vsftpd

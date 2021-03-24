@@ -1,0 +1,44 @@
+---
+ - name: deploying webserver
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: install httpd
+             yum:
+                     name: httpd
+                     state: installed
+
+           - name: start httpd
+             service:
+                     name: httpd
+                     state: started
+                     enabled: yes
+
+           - name: Ensure the default Apache port is 18080
+             lineinfile:
+                     path: /etc/httpd/conf/httpd.conf
+                     regexp: '^Listen '
+                     insertafter: '^#Listen '
+                     line: Listen 18080
+                    
+           - name: adding in firewall port
+             firewalld:
+                     port: 18080/tcp
+                     permanent: yes
+                     state: enabled
+                     immediate: yes
+
+           - name: adding content in index.
+             copy:
+                     content: "new output = allu arjun"
+                     dest: /var/www/html/index.html 
+
+           - name: restarting firewalld
+             service:
+                     name: "{{item}}"
+                     state: restarted            
+             loop:  
+                     - firewalld
+                     - httpd
+

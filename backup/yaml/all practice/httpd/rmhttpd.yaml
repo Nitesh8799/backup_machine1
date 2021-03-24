@@ -1,0 +1,38 @@
+---
+ - name: remove all customize setting with uninstalling httpd
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - name: uninstalling httpd
+             yum:
+                     name: httpd
+                     state: removed
+
+           - name: remove from firewalld
+             firewalld:
+                     service: http
+                     permanent: yes
+                     state: disabled
+                   
+           - name: remove httpd
+             firewalld:      
+                     port: 8080/tcp
+                     state: disabled
+                     permanent: yes
+                     immediate: yes
+          
+           - name: remove 8080 from conf file
+             lineinfile:
+                     path: /etc/httpd/conf/httpd.conf
+                     regexp: '^Listen '
+                     insertafter: '^#Listen '
+                     line: Listen 8080
+
+           - name: remove index content
+             copy:
+                     content: " "
+                     dest: /var/www/html/index.html
+                     
+
+                      

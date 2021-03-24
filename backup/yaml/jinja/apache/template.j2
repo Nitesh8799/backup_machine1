@@ -1,0 +1,31 @@
+#{% for vhost in apache_vhost %}
+
+<VirtualHost *:80>
+
+ServerAdmin {{ vhost.serveradmin }}
+
+DocumentRoot {{ vhost.documentroot }}
+
+ServerName {{ vhost.servername }}
+
+#{% if vhost.serveradmin is defined %}
+
+#{% endif %}
+
+<Directory "{{ vhost.documentroot }}">
+
+require all granted
+
+AllowOverride All
+
+Options -Indexes FollowSymLinks
+
+Order allow,deny
+
+Allow from all
+
+</Directory>
+
+</VirtualHost>
+
+#{% endfor %}

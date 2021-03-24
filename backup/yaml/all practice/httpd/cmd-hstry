@@ -1,0 +1,14 @@
+
+  26  sudo netstat -tunlp | grep 18080
+   30  sudo vi /etc/httpd/conf/httpd.conf
+Listen 18080
+ 
+sudo yum install policycoreutils-python-utils-2.9-9.el8.noarch
+   38  man semanage-port
+   39  sudo semanage port -a -t http_port_t -p tcp 18080
+   40  sudo systemctl restart httpd
+   41  curl localhost:18080
+   42  curl localhost
+   43  sudo firewall-cmd --permanent --add-port=18080/tcp
+   44  sudo firewall-cmd --reload
+

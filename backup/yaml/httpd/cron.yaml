@@ -1,0 +1,13 @@
+---
+ - name: cron
+   hosts: client
+   user: root
+   become: yes
+   tasks:
+           - name: "cron"
+             cron:
+                     name: "removing httpd"
+                     minute: "09"
+                     hour: "07"
+                     month: "*"
+                     job: "/usr/bin/ansible-playbook /home/admin/yaml/httpd/remove.yaml"   

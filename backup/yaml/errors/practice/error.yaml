@@ -1,0 +1,24 @@
+---
+ - name: Trying errors
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+        - block:
+             - name: installing httpd server bloack
+               yum:
+                    name: httpd2
+                    state: installed
+             - name: msg from block
+               debug:
+                    msg: Installation successfully on block
+
+          rescue:
+             - name: installing httpd server rescue
+               yum:
+                     name: httpd
+                     state: installed
+             - name: msg from rescue
+               debug:
+                     msg: Installation successfully by rescue
+

@@ -1,0 +1,21 @@
+---
+ - name: using vars (all types of vars)
+   hosts: server
+   user: admin
+   become: yes
+   vars:
+           user1: ross
+           user2: joey
+           user3: chandeler
+           group1: rachel
+           group2: pheobe
+           group3: monice
+   tasks:
+           - name: group add
+             group:
+                     name: "{{group1}}{{group2}}{{group3}}"
+                     state: present
+
+           - name: useradd
+             user:
+                     nae          

@@ -1,0 +1,21 @@
+---
+ - name: Using playlevel vars in ansible playbook
+   hosts: all
+   become: yes
+   vars:
+           - username: illuminati
+             var1: /costa-rica
+             var2: present
+             
+   tasks:
+           - name : "Adding user {{ username }}"
+             user:
+                     name: "{{ username }}" 
+                     state: "{{ var2 }}"
+                     home: "/home/{{ username }}"
+
+           - name: Create directory {{ var1 }} with {{ username }} as owner of the directory
+             file:
+                     name: "{{ var1 }}"
+                     owner: "{{ username }}"
+                     state: directory

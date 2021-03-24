@@ -1,0 +1,49 @@
+---
+ - name: Tasks-2 
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: Create a 1Gb Partition
+             parted:
+                 device: /dev/sdb
+                 number: 3
+                 state: present
+                 part_start: 1303MiB
+                 part_end: 2327MiB
+
+           - name: Create a 2nd Partition of 1Gb
+             parted:
+                 device: /dev/sdb
+                 number: 4
+                 state: present
+                 part_start: 2328MiB
+                 part_end: 3352MiB
+
+           - name: vgcreate 
+             lvg:
+                 vg: myvg
+                 pvs: /dev/sdb3,/dev/sdb4
+           
+           - name: Create a LV of 1200Mb
+             lvol:
+                 vg: myvg
+                 lv: mylv
+                 size: 1200M
+           
+           - name: create directory for mount
+             file:
+                 name: /lv_mount
+                 state: directory            
+
+           - name: xfs format 
+             filesystem:
+                 dev: /dev/myvg/mylv
+                 fstype: xfs      
+
+           - name: mounting the lv
+             mount:
+                 path: /lv_mount
+                 src: /dev/myvg/mylv     
+                 fstype: xfs
+                 state: mounted 

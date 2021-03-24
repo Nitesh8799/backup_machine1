@@ -1,0 +1,20 @@
+---
+ - name: Installing Apache httpd on Ubuntu & Centos
+   hosts: myserver
+   become: yes
+   user: admin
+   tasks:
+           - name: Installing webserver on Ubuntu
+             apt: name=apache2 state=latest
+             when: ansible_os_family=="Debian"
+           - name: debug
+             debug:
+                  msg: Installation of Apache2 on Ubuntu is Successfull  
+
+           - name: Installing webserver on Centos
+             yum: name=httpd state=installed
+             when: ansible_os_family=="RedHat"
+           - name: debug
+             debug:
+                  msg: Installation of Httpd on Centos is Successfull  
+

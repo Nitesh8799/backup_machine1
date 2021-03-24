@@ -1,0 +1,34 @@
+---
+ - name: Variables yaml script
+   hosts: all
+   become: yes
+   vars: 
+        username: xxx
+        dire: directory
+        pst : present
+        abt : absent
+        prmt: permanent
+   tasks:
+           - name: Adding user {{ username }}
+             user:
+                     name: "{{ username }}"
+                     state: "{{ pst }}"
+
+           - name: creating a {{ dire }} with {{ username }} user as owner
+             file:
+                     name: /testing
+                     state: "{{ dire }}"
+                     owner: "{{ username }}"
+                     mode: 777
+                    
+           - name: a {{ prmt}} file creation
+             file: 
+                     name: /insert
+                     state: "{{ dire }}"
+                     owner: "{{ username }}"
+                     mode: 774 
+
+           - name: removing files
+             file:
+                     name: /pallavi
+                     state: "{{ abt }}"

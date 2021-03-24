@@ -1,0 +1,24 @@
+---
+ - name: loop
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           #     - name: restart multiple services in a loop
+           #  service:
+           #     name: "{{ item }}"
+           #     state: started
+           #     #  enabled: true
+                #             become: true
+                #  loop:
+                #- httpd
+                #- firewalld
+
+           - name: install and restart services
+             yum:
+                     name: "{{ item.pkg }}"
+                     state: installed
+                     name: "{{ item.service }}"
+                     state: restarted
+             loop:
+                     - {"pkg":"nfs-utils","service":"nfs-utils"}        

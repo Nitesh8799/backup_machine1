@@ -1,0 +1,24 @@
+ - name: create a swap partition
+   hosts: server
+   become: yes
+   # user: admin
+   tasks:
+           - name: create a 700Mb partition
+             parted:
+                 device: /dev/sdb
+                 number: 3
+                 state: present
+                 flags: [ lvm ]
+                 part_type: primary
+                 part_start: 1304MiB
+                 part_end: 2004MiB
+
+           - name: make a swap
+             filesystem:
+                 fstype: swap
+                 dev: /dev/sdb3
+
+           - name: make a swap here
+             command:
+                 "swapon -s /dev/sdb"
+             become_user: root

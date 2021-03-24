@@ -1,0 +1,16 @@
+---
+ - name: using crontab
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - name: asd
+             # - name: "using crontab for runnig the ansible-playbook"
+             cron:
+                      name: "removing httpd"
+                      minute: "52"
+                      hour: "06"
+                      day: "*"
+             job: "/usr/bin/ansible-playbook /home/admin/yaml/httpd/remove.yaml"
+
+

@@ -1,0 +1,8 @@
+---
+# handlers file for install_httpd
+ - name: add_into_firewalld
+   firewalld:
+           name: "{{ pkg }}"
+           permanent: yes
+           state: enabled
+           immediate: yes

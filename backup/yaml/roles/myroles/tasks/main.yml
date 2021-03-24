@@ -1,0 +1,10 @@
+---
+# tasks file for myroles
+ - name: installing fstp server
+   yum:
+           name: vsftpd
+           state: installed
+
+ - name: message
+   debug:
+           msg: vsftpd server is installed , on {{ var1 }} server   

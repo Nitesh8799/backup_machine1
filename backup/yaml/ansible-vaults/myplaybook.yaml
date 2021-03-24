@@ -1,0 +1,19 @@
+---
+ - name: We are testing Ansible Vault
+   hosts: server
+   become: yes
+   user: admin
+   vars_files:
+        - myvars.yaml
+   tasks:
+        - name: Adding required group
+          group:
+                  name: "{{ mygroup }}"
+                  state: "{{ state1 }}"
+        - name: Adding required user to the group
+          user:
+                  name: "{{ myuser }}"
+                  state: "{{ state1 }}"
+                  groups: ["{{ mygroup }}",wheel]
+                  password: "$5$L62R8eOIadoV9xFg$5SliQmmuoXvt489siqo3GLq8QTO5LMjgWxnIScYTB74"
+

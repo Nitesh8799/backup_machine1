@@ -1,0 +1,9 @@
+---
+ - hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: httpd
+             yum:
+                     name: httpd
+                     state: installed

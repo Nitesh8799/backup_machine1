@@ -1,0 +1,35 @@
+---
+ - name: block & rescue 
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: create a vg
+             lvg:
+                 vg: myvg1
+                 pvs: /dev/sdb1,/dev/sdb2
+
+           - block:
+                   - name: creating partition - block
+                     lvol:
+                         vg: myvg1
+                         lv: mylv1
+                         size: 1500M
+
+             rescue:
+                   - name: creating partition - rescue
+                     lvol:
+                         vg: myvg1
+                         lv: mylv1
+                         size: 1000M
+           - name: swap lv
+             filesystem:
+                 fstype: swap
+                 dev: /dev/myvg1/mylv1    
+
+           - name:
+             mount:
+                 path: /calvin
+                 src: /dev/myvg1/mylv1
+                 fstype: swap
+                 state: mounted   

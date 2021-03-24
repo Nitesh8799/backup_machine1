@@ -1,0 +1,11 @@
+You can copy rule from examples in 
+man firewalld.richlanguage
+
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.233.171" forward-port to-port="80" protocol="tcp" port="28080""
+firewall-cmd --reload
+firewall-cmd --list-all
+#To remove rich rule from firewall
+firewall-cmd --list-all
+#Copy the rule line from this output and put in following command
+firewall-cmd --permanent --remove-rich-rule=”-----”
+

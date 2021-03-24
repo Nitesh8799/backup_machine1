@@ -1,0 +1,20 @@
+---
+ - name: using handlers
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: Delete fitoori
+             user:
+                     name: fitoori
+                     state: absent
+             notify: DeleteHome
+
+   handlers:
+           - name: DeleteHome
+             file:
+                     name: /home/fitoori
+                     state: absent          
+            
+
+             

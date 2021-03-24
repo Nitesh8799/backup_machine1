@@ -1,0 +1,36 @@
+---
+ - name: Deploying Webserver
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           name: Install Apache Server
+           yum:
+                   name: httpd
+                   state: installed
+                   
+           name:  Putting webpage on document root
+           copy:
+                   src: /var/www/html/index.html
+                   dest: /var/www/html/index.html
+
+           name: Starting Httpd service
+           service:
+                   service: httpd
+                   state: started
+                   enabled: yes
+                   
+            name: Starting Firewalld service
+           service:
+                   service: firewalld
+                   state: started
+                   enabled: yes
+                   
+           name: Enable Firewall for port 80/tcp or http service
+           firewalld:
+                   port: 80/tcp
+                   permanent: yes
+                   state: enabled
+                   immediate: yes
+
+        

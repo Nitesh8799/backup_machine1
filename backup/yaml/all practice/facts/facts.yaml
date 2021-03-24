@@ -1,0 +1,17 @@
+---
+ - name: facts
+   user: admin
+   hosts: server
+   become: yes
+   tasks:
+           - name: useradd tommy
+             yum:
+                     name: httpd
+                     state: installed
+             when: ansible_domain=="unnati.com"  
+                     #    when: ansible_user_gecos=="Admin" 
+           - name: delete home directory
+             file:
+                     name: /home/admin/obe
+                     state: directory
+             when: ansible_domain=="unnati.com"  

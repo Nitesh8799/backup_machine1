@@ -1,0 +1,32 @@
+---
+ - name: using variables at another level
+   hosts: all
+   become: yes
+   vars:
+                a: arijit
+                pst: present
+                nt: nitesh
+                abst: absent
+                rm: removed
+                tc: touch
+
+
+   tasks:
+           - name: Creating {{ a }} file
+             file:
+                   name: "{{ a }}"
+                   state: "{{ tc }}"     
+                   mode: 666
+                   owner: "{{ nt }}"
+             
+           - name: Adding {{ a }} user with {{ nt }} group
+             user:
+                   name: "{{ a }}"
+                   state: "{{ pst }}"
+                   group: "{{ nt }}"
+                   home: "/mnt/{{ a }}"
+
+           - name: uninstalling a apache httpd
+             yum:
+                  name: httpd
+                  state: "{{ rm }}" 

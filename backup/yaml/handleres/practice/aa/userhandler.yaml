@@ -1,0 +1,29 @@
+---
+ - name: using handlers
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: add user geller
+             user: 
+                     name: geller
+                     state: present
+             notify: usergeller         
+           
+             # - name: Delete geller
+             # user:
+             #        name: geller
+             #        state: absent
+             #notify: DeleteHome
+
+   handlers:
+           # - name: DeleteHome
+           #  file:
+           #          name: /home/geller
+           #          state: absent          
+           
+           - name: usergeller
+             file:
+                     name: /home/admin/ageller
+                     state: directory
+             

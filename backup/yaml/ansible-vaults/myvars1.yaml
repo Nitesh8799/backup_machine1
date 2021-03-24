@@ -1,0 +1,6 @@
+---
+ - pkg: httpd
+   i: installed
+   rs: restarted
+   st: started
+

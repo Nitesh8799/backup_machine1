@@ -1,0 +1,12 @@
+---
+ - name: try when_condition
+   hosts: server
+   user: admin
+   become: yes
+   roles:
+           - when_condition
+   tasks:
+           - name: reload firewalld
+             service:
+                 service: firewalld
+                 state: reloaded          

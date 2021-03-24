@@ -1,0 +1,12 @@
+---
+ - name: Install {{ pkg }} on server
+   yum:
+           name: "{{ pkg }}"
+           state: "{{ state }}"
+   notify: add_into_firewalld 
+
+ - name: start the service
+   service:
+           service: httpd
+           state: enabled
+              

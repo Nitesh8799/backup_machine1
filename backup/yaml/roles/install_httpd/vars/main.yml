@@ -1,0 +1,5 @@
+---
+# vars file for install_httpd
+pkg: httpd
+state: installed
+

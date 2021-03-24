@@ -1,0 +1,11 @@
+---
+ - name: try shell
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+       - name: shell
+         user:
+            name: courteny
+            shell: /sbin/nologin
+            state: present

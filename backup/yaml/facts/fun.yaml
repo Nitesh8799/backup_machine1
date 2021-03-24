@@ -1,0 +1,13 @@
+---
+ - name: Demo of Fact and When Condition
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: Keeping Mariadb service running because memory required is satisfied
+             service: name=mariadb state=started
+             when: ansible_memfree_mb > 300
+
+           - name: Uninstalling mariadb becuase available meme is less than required
+             yum: name=mariadb-server state=absent
+             when: ansible_memfree_mb <= 300

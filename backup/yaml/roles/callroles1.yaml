@@ -1,0 +1,7 @@
+---
+ - name: calling the manual roles
+   hosts: server
+   user: admin
+   become: yes
+   roles:
+           - deleteuser

@@ -1,0 +1,31 @@
+---
+ - name: installing anything
+   hosts: server
+   become: yes
+   vars:
+           ya: httpd
+           ps: present
+           ab: absent
+           var1: installed
+           rm: removed
+           st: started
+           rst: restarted
+   tasks:
+           - name: installing {{ ya }}
+             yum:
+                     name: "{{ ya }}"
+                     state: "{{ var1 }}"
+                     
+           - name: allow in firewalld
+             firewalld:
+                     service: http
+                     permanent: yes
+                     state: enabled
+                     immediate: yes
+
+
+           - name: started {{ ya }}
+             service:
+                     name: "{{ ya }}"
+                     state: "{{ rst }}"
+                     enabled: yes          

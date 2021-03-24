@@ -1,0 +1,9 @@
+---
+ - name: removing old cron jobs
+   hosts: all
+   become: yes
+   tasks:
+           - name: remove
+             cron:
+                   name: "mkdir"
+                   state: absent

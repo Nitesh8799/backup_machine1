@@ -1,0 +1,22 @@
+---
+ - name: installing httpd
+   hosts: client
+   become: yes
+   tasks:
+            - name: installing apache httpd
+              yum:
+               name: httpd
+               state: installed
+
+            - name: starting apache httpd
+              service:
+                   service: httpd
+                   state: started
+                   enabled: yes
+
+               #         - name: allow in firewall
+               #  firewalld:
+               #service: http
+               #permanent: yes
+               #immediate: yes
+               #state: enabled

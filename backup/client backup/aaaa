@@ -1,0 +1,924 @@
+    1  pwd
+    2  ip a
+    3  nmtui
+    4  ip a
+    5  ls
+    6  yum update -y
+    7  ip a
+    8  ping 192.168.80.129
+    9  yum install httpd
+   10  systemctl enable httpd
+   11  systemctl status httpd
+   12  systemctl start httpd
+   13  systemctl status httpd
+   14  cat /etc/hosts
+   15  vi /etc/hosts
+   16  hostname
+   17  hostnamectl -set hostname client.unnati.com
+   18  hostnamectl set-hostname client.unnati.com
+   19  hostname
+   20  vi /etc/hosts
+   21  ping server.unnati.com
+   22  ipa
+   23  ip a
+   24  systemctl reboot
+   25  ls
+   26  cat /var/lo
+   27  cd /var/
+   28  ls
+   29  cd l
+   30  cd log
+   31  ls
+   32  cat boot.log 
+   33  init 1
+   34  ls
+   35  init 0
+   36  ls
+   37  yum update -y
+   38  curl 192.168.80.129
+   39  ls
+   40  touch aniket
+   41  ls
+   42  ls
+   43  cat /etc/hosts
+   44  curl server.unnati.com
+   45  xkt
+   46  ls
+   47  curl website1.unnati.com
+   48  curl http://website1.unnati.com
+   49  ssh root@192.168.80.129
+   50  curl http://website1.unnati.com
+   51  vi /etc/hosts
+   52  find / -name hosts
+   53  cat /etc/hsots
+   54  cat /etc/hosts
+   55  cat /root/hosts
+   56  curl http://website1.unnati.com
+   57  curl http://192.168.80.129
+   58  curl http://website1.unnati.com
+   59  curl http://192.168.80.129
+   60  curl http://server.unnati.com
+   61  exot
+   62  exit
+   63  history
+   64  curl http://server.unnati.com
+   65  ls
+   66  curl 192.168.80.129
+   67  curl http://192.168.80.129
+   68  curl http://niteshwebsite.unanti.com
+   69  curl http://niteshwebsite.unnati.com
+   70  curl http://192.168.80.129
+   71  find /-name hosts
+   72  find / -name hosts
+   73  cat /etc/hosts
+   74  vi /etc/hosts
+   75  reboot
+   76  cat /var/log/messages 
+   77  cat /var/log/messages  | grep -i error
+   78  grub2-mkpasswd-pbkdf2 
+   79  curl 192.168.80.129
+   80  cat /etc/hosts
+   81  hostname -oi
+   82  hostname 
+   83  curl http://192.168.80.129
+   84  curl http://niteshwebsite.unnati.com
+   85  curl http://niteshwebsite.unnati.com:20290
+   86  curl http://niteshwebsite.unnati.com:29090
+   87  curl http://niteshwebsite.unnati.com
+   88  ls
+   89  less /var/log/messages 
+   90  jouranlctl -xe
+   91  journalctl -xe
+   92  reboot
+   93  cat /var/www/html/index 
+   94  init 0
+   95  ls
+   96  systemctl staus httpd
+   97  systemctl status httpd
+   98  cat /etc/selinux/config 
+   99  ls
+  100  teamd
+  101  seta
+  102  set
+  103  yum install net-tools
+  104  nmcli connectino show
+  105  nmcli connection show
+  106  nmcli
+  107  vi .sh
+  108  brtck show
+  109  brctl show
+  110  ifcofig
+  111  ip config
+  112  ip a
+  113  exit
+  114  cat /var/www/html/index 
+  115  mkdir /unnati/rhce
+  116  mkdir /unnati/rhce -p
+  117  cp /usr/share/doc/httpd-2.4.6/httpd-vhosts.conf /etc/httpd/conf.d/website.conf
+  118  vi /etc/httpd/conf.d/website.conf
+  119  httpd -t
+  120  systemctl restart httpd
+  121  jouranlctl -xe
+  122  journalctl -xe
+  123  vi /etc/httpd/conf.d/website.conf
+  124  httpd -t
+  125  systemctl restart httpd
+  126  systemctl status httpd
+  127  curl 192.168.80.131
+  128  firewall-cmd --permanent --add-service=http
+  129  firewall-cmd --reload
+  130  cat /etc/hosts
+  131  ls /unnati/rhce/
+  132  ls /unnati/rhc
+  133  ls /unnati/rhce/
+  134  cd /unnati/rhce/
+  135  ls
+  136  index.html
+  137  vi index.html
+  138  systemctl restart httpd
+  139  systemctl status httpd
+  140  curl 192.168.80.131
+  141  cat /var/www/html/index index.html 
+  142  cd /var/www/html/
+  143  kls
+  144  ;
+  145  ls
+  146  cat index 
+  147  cd
+  148  ls
+  149  curl server.unnati.com
+  150  curl rhce.unnati.com
+  151  vi /etc/hosts
+  152  curl http://rhce.unnati.com
+  153  vi /etc/hosts
+  154  httpd -t
+  155  vi /etc/hosts
+  156  systemctl restart httpd
+  157  cat /etc/hosts
+  158  vi /etc/hosts
+  159  systemctl restart httpd
+  160  curl http://server.rhce.com
+  161  vi /etc/hosts
+  162  cd /etc/hosts
+  163  cd /etc/
+  164  ls -a
+  165  ls -al
+  166  rm -rf .hosts.swp 
+  167  curl http://rhce.server.com
+  168  curl http://server.unnati.com
+  169  curl http://rhce.server.com
+  170  nmcli connection show
+  171  kj
+  172  ''
+  173  ,w
+  174  lw
+  175  de
+  176  kw
+  177  lw
+  178  ls
+  179  cd
+  180  ls
+  181  wxit
+  182  exit
+  183  curl 192.168.80.129
+  184  man semanage -port
+  185  man semanage-port
+  186  yum install policycoreutils-python
+  187  man semanage -port
+  188  ls
+  189  nmcli show
+  190  nmcli show connection
+  191  nmcli connection show
+  192  nmcli con
+  193  vi team.sh
+  194  rm team.sh 
+  195  ls
+  196  nmcli con
+  197  vi /usr/share/doc/teamd-1.29/example_configs/activebackup_arp_ping_1.conf 
+  198  vi team.sh
+  199  sh team.sh 
+  200  teamdctl myteam state
+  201  teamdctl 
+  202  teamdctl state
+  203  teamdctl state view
+  204  nmcli con
+  205  nmtui
+  206  nmcli con
+  207  ext
+  208  exit
+  209  ls
+  210  l
+  211  ls
+  212  nmcli con
+  213  vi teamd.sh
+  214  sh team.sh
+  215  rm -rf teamd.sh
+  216  nmtui
+  217  exot
+  218  exit
+  219  curl rhce.server.com
+  220  nmcli con
+  221  systemctl restart nmcli
+  222  restart
+  223  reboot
+  224  teamd
+  225  nmcli connection show
+  226  nmcli con
+  227  teamdctl myteam state
+  228  vi team.sh
+  229  rm -rf team.sh 
+  230  vi myteam.sh
+  231  sh myteam.sh 
+  232  nmtui
+  233  nmcli con
+  234  ls
+  235  cd
+  236  ls
+  237  curl server.rhce.com
+  238  cat /etc/host
+  239  curl rhce.server.com
+  240  ls
+  241  mkdir /sharefile
+  242  touch /sharefile/test_client{1..10}
+  243  vi /etc/exports
+  244  exportfs -t
+  245  exportfs -rv
+  246  vi /etc/exports
+  247  exportfs -rv
+  248  ls
+  249  vi /etc/exports
+  250  exportfs -Rv
+  251  exportfs -r
+  252  mkdir /clientdata
+  253  touch /clientdata/test{1..10}.client
+  254  ls /clientdata/
+  255  vi /etc/exports
+  256  exportfs -rv
+  257  systemctl start nfs-server
+  258  systemctl status nfs-server
+  259  systemctl enable nfs-server
+  260  firewall-cmd --permanent --add-service=nfs
+  261  firewall-cmd --reload
+  262  history
+  263  ls /clientdata/
+  264  history
+  265  df -hT
+  266  ls /serverdata/
+  267  ip a
+  268  ls
+  269  ls /serverdata/
+  270  ls
+  271  ls
+  272  cd
+  273  ls
+  274  init 0
+  275  ls
+  276  poweroff
+  277  ls /
+  278  ls /serverdata/
+  279  ls
+  280  yum installs
+  281  yum install aniket
+  282  yum cleanall
+  283  yum clean all
+  284  ls
+  285  wheris rpmdb
+  286  whereis rpmdb
+  287  cd /usr/bin/rpmdb
+  288  cat /usr/bin/rpmdb
+  289  whereis rpmdb
+  290  cd /usr/share/man/man8/rpmdb.8.gz 
+  291  cat /usr/share/man/man8/rpmdb.8.gz
+  292  ls
+  293  cd;
+  294  ;s
+  295  ls
+  296  restart
+  297  systemctl reboot
+  298  ls
+  299  cd /run/systemd/generator/serverdata.mount 
+  300  cat /run/systemd/generator/serverdata.mount
+  301  cat /etc/fstab 
+  302  vi /etc/fstab
+  303  systemctl restart httpd
+  304  systemctl restart smb
+  305  yum install smb
+  306  grep rpm /etc/rc.d/init.d/
+  307  rm -f /var/lib/rpm/__db* &> /dev/null 
+  308  cd /var/spool/
+  309  ls
+  310  cd mail
+  311  ls
+  312  cd ..'
+  313  cd ..
+  314  ls
+  315  cd cron
+  316  ls
+  317  cd ..
+  318  cd anacron/
+  319  ls
+  320  cd ..
+  321  cd plymouth/
+  322  ls
+  323  cd ..
+  324  cd postfix/
+  325  lf
+  326  ls
+  327  cd saved/
+  328  ls
+  329  cd ..
+  330  cd flush/
+  331  ls
+  332  cd ..
+  333  cd
+  334  ps -aux | grep -e rpm -e yum -e up2date
+  335  lsof | grep /var/lib/rpm
+  336  kill -9 1513
+  337  whereis up2date
+  338  find / -name up2date
+  339  cd /var/lib
+  340  ls
+  341  tar -zcvf /var/preserve/rpmdb-$(date +%Y-%m-%d_%H-%M-%S).tar.gz.rpm
+  342  yum install tar
+  343  mv /var/lib/rpm/__db* /tmp
+  344  yum clean all
+  345  ls
+  346  reboot
+  347  ls
+  348  chmod
+  349  ls
+  350  cd
+  351  cat /var/log/messages
+  352  whereis kdump
+  353  cat /etc/kdump.conf 
+  354  cd
+  355  ls
+  356  db_stat -e
+  357  rm -rf /var/lib/rpm/__db*
+  358  /usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages 
+  359  find /var/lib/yum/yumdb/ -mindepth 2 -maxdepth 2 
+  360  find /var/lib/yum/yumdb/ -mindepth 2 -maxdepth 2 | sed 's/^[^-]*-\(.*\)-/\1./' | sort > yumdb.packages.txt
+  361  cat yumdb.packages.txt 
+  362  rpmdb_verify
+  363  /usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages 
+  364  rpmdb_dump
+  365  tar zvcf rpm-db.tar.gz /var/lib/rpm/*
+  366  ks
+  367  ls
+  368  cat rpm-db.tar.gz 
+  369  tar -zvcf rpm-db.tar.gz /var/lib/rpm/*
+  370  rm -f /var/lib/rpm/__db*
+  371  /usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages
+  372  /usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages; echo $?
+  373  rpm -vv --rebuilddb
+  374  yum check
+  375  restorecon -R -v /var/lib/rpm
+  376  yum check
+  377  # tar -zcvf /backups/rpmdb-$(date +"%d%m%Y").tar.gz  /var/lib/rpm
+  378  tar -zcvf /backups/rpmdb-$(date +"%d%m%Y").tar.gz  /var/lib/rpm
+  379  # rm -f /var/lib/rpm/__db*
+  380  rm -f /var/lib/rpm/__db*
+  381  /usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages
+  382  vi run.sh
+  383  sh run.sh 
+  384  yum install a
+  385  yum repolist all
+  386  update
+  387  yum
+  388  yum --bugfix
+  389  yum clean all
+  390       yum-config-manager --enable <repo>
+  391  yum-config-manager --enable <repo>
+  392  yum-config-manager --enable 
+  393  yum-config-manager --enable yum
+  394  yum
+  395  mag
+  396  apt-get install wget
+  397  apt
+  398  find
+  399  cd 
+  400  ls
+  401  cd backups.rpm.mm_dd_yyyy/
+  402  ls
+  403  cd rpm/
+  404  ls
+  405  cd
+  406  ls
+  407  rm rpm-db.tar.gz 
+  408  rmdir backups.rpm.mm_dd_yyyy/
+  409  rm -rf backups.rpm.mm_dd_yyyy/
+  410  ls
+  411  yum
+  412  yum install
+  413  yum install-n yum
+  414  yum instal
+  415  yum install
+  416  cat /var/log/messages
+  417  date
+  418  yum clean all
+  419  uum
+  420  yum repolist all
+  421  yum
+  422  yum hi;
+  423  whereis rpm
+  424  init 1
+  425  clear
+  426  df -h
+  427  mount
+  428  touch /tmp/test
+  429  s
+  430  ls
+  431  whereis rpm
+  432  clear
+  433  ll
+  434  less yumdb.packages.txt 
+  435  pwd
+  436  ll
+  437  history 
+  438  yum clean all
+  439  clear
+  440  yum clean all
+  441  yum clean all >> output
+  442  less output 
+  443  !
+  444  clear
+  445  yum clean all 
+  446  cd /etc/yum.repos.d/
+  447  ll
+  448  clear
+  449  ll
+  450  history | grep .repo
+  451  history | grep rm
+  452  ll/tm
+  453  ll /tmp/
+  454  ll /tmp/*.repo
+  455  mv /tmp/*.repo .
+  456  ll
+  457  clear
+  458  yum clean all
+  459  yum repolist
+  460  clear
+  461  yum repolist
+  462  clare
+  463  clear
+  464  cat /etc/yum.repos.d/CentOS-Base.repo 
+  465  clear
+  466  cat /etc/hosts
+  467  ping google.com
+  468  cat /etc/resolv.conf
+  469  PuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTY
+  470  clear
+  471  file /etc/resolv.conf
+  472  hostname -f
+  473  mv /etc/resolv.conf /etc/resolv.conf_bk
+  474  mv /tmp/resolv.conf /etc
+  475  ping google.com
+  476  clea
+  477  clear
+  478  yum clean all
+  479  clear
+  480  yum repolist
+  481  yumclear
+  482  clean
+  483  clear
+  484  yum clean all
+  485  clear
+  486  ll /var/lib/rpm/Providename 
+  487  file /var/lib/rpm/Providename
+  488  cd /var/lib/rpm
+  489  ll
+  490  cd ..
+  491  mv rpm rpm_bk
+  492  ll /var/lib/
+  493  clear
+  494  pwd
+  495  ll | grep rpm
+  496  cd /tmp/
+  497  mv /tmp/rpm /var/lib/
+  498  yum clean all
+  499  yum repolist
+  500  yum install smb-client cifs-utils
+  501  history
+  502  yum clean all
+  503  yum update
+  504  cd
+  505  mkdir /impdata
+  506  rmdir /impdata/
+  507  ls
+  508  rmdir /impdata/
+  509  mkdir /impdata/
+  510  vi /etc/fstab
+  511  cd /etc/fsta
+  512  cd /etc/fstab
+  513  rm /etc/.fstab.swo
+  514  rm /etc/.fstab.swp 
+  515  vi /etc/fstab 
+  516  cd /impdata/
+  517  ls
+  518  mount -a
+  519  mount -ae
+  520  cd
+  521  mount -av
+  522  ls /impdata/
+  523  ls
+  524  cd /impdata/
+  525  ls
+  526  touch aas
+  527  ls
+  528  cd
+  529  rm -rf /impdata/
+  530  yum remove samba-client cifs-utils
+  531  yum install samba-client cifs-utils
+  532  ls
+  533  yum install samba-client cifs-utils
+  534  yum remove samba-client cifs-utils
+  535  yum install samba-client cifs-utils
+  536  mkdir /impdata
+  537  vi /etc/fstab
+  538  mount -av
+  539  cat mount.cifs
+  540  man mount.cifs
+  541  umount -av
+  542  mount -av
+  543  cd /impdata/
+  544  ls
+  545  cd
+  546  ls
+  547  cat yumdb.packages.txt 
+  548  vi /etc/fstab 
+  549  mount -av
+  550  cat /etc/fstab 
+  551  whereis samba
+  552  whereis smb.conf
+  553  yum install samba
+  554  yum install samba samba-client
+  555  samba
+  556  whereis sama
+  557  whereis smb
+  558  mount error(13): Permission denied
+  559  cat /etc/fstab
+  560  vi /etc/fstab
+  561  mount -av
+  562  mkdir smbdata
+  563  mount -av
+  564  chdir smbdata/
+  565  chmod smbdata/
+  566  ll smbdata/
+  567  mkdir /smbdata
+  568  mount -av
+  569  systemctl umount /smbdata/
+  570  umount /smbdata/
+  571  umount /impdata/
+  572  ls /
+  573  umout /sharefile/
+  574  cd /
+  575  ls
+  576  umount /sharefile/
+  577  umount /
+  578  umount clientdata/
+  579  umount impdata/
+  580  umount serverdata/
+  581  umount unnati/
+  582  mount 
+  583  ls
+  584  mount -av
+  585  man mount.cifs
+  586  firewall-cmd --permanent --add-service=samba
+  587  firewall-cmd --reload
+  588  mount -av
+  589  systemctl start smb nmb
+  590  systemctl start smb
+  591  systemctl start samba
+  592  systemctl start smb nmb
+  593  whereis nmb
+  594  whereis samba
+  595  cd /usr/libexec/
+  596  ls
+  597  cd samba/
+  598  ls
+  599  cat cups_backend_smb 
+  600  cd
+  601  ls
+  602  systemctl daemon-reload
+  603  systemctl restart remote-fs.target
+  604  jounralct -xe
+  605  journalctl -xe
+  606  systemctl start smb
+  607  yum install sm
+  608  yum install smn
+  609  yum install smb
+  610  yum remove samba samba-client cifs-utils
+  611  cd /
+  612  ls
+  613  rm -rf sharefile/ impdata/ clientdata/ serverdata/
+  614  ls
+  615  cd
+  616  yum install samba samba-client cifs-utils
+  617  systemctl status smb
+  618  systemctl start smb nmb
+  619  jounralctl -xe
+  620  journalctl -xe
+  621  yum remove samba samba-client cifs-utils
+  622  reboot
+  623  top
+  624  cat > redhat
+  625  cat > rhce
+  626  jobs 
+  627  jobs -l
+  628  fg %2
+  629  bg
+  630  jobs -l
+  631  kill -9 2609
+  632  jobs -l
+  633  jobs
+  634  bg
+  635  fg
+  636  top
+  637  pwd
+  638  hostname
+  639  hostname -l
+  640  hostname -e
+  641  pdi
+  642  pid
+  643  whoami
+  644  ps 
+  645  ps - aux
+  646  ps -aux
+  647  yum remove nfs-utils
+  648  yum install nfs-utils
+  649  ls /
+  650  ls /serversharedata/
+  651  mkdir /serversharedata/
+  652  mkdir /newsharedirectory
+  653  mount server.unnati.com:/nfsdata /serversharedata/
+  654  df -hT
+  655  ls /serversharedata/
+  656  cd /serversharedata/
+  657  touch aniket
+  658  ls
+  659  cat test1.server 
+  660  vi test1.server
+  661  touch anike
+  662  systemctl restart nfs-server
+  663  touch anike
+  664  ll
+  665  cd 
+  666  ll
+  667  systemctl restart nfs-server
+  668  systemctl enable nfs-server
+  669  firewall-cmd --permanent --add-service=nfs-server
+  670  firewall-cmd --permanent --add-service=nfs
+  671  firewall-cmd --reload
+  672  cd /serversharedata/
+  673  ls
+  674  touch a
+  675  ll
+  676  ls -lZ /serversharedata/
+  677  ls /
+  678  ll /
+  679  ll
+  680  touch a
+  681  ls
+  682  ls -l /
+  683  chmod o+w /serversharedata/
+  684  cd
+  685  chmod o+w /serversharedata/
+  686  chmod
+  687  ls -ll /serversharedata/
+  688  ls -ll /
+  689  cd /serversharedata/
+  690  ls
+  691  touch a
+  692  cd
+  693  chmod 777 /serversharedata/
+  694  chmod -r 777 /serversharedata/
+  695  ls
+  696  mkdir /tesgt
+  697  ls -ll 
+  698  ls -ll /
+  699  chmod 777 /tesgt/
+  700  getfacl 777 /tesgt/
+  701  ls
+  702  cd
+  703  cd /
+  704  ls
+  705  rm -rf serversharedata/ newshareddata/ newsharedirectory/
+  706  umount /serversharedata/
+  707  rm -rf serversharedata/ newshareddata/ newsharedirectory/
+  708  ll 
+  709  ls
+  710  cd smbshareddata/
+  711  ls
+  712  cd
+  713  ls
+  714   ls /
+  715  rm -rf /tesgt/
+  716  ll
+  717  cd /unnati/
+  718  ls
+  719  cd rhce/
+  720  ls
+  721  cat index.html 
+  722  cd
+  723  ls
+  724  cd
+  725  yum remove nfs-utils
+  726  yum install nfs-utils
+  727  ls
+  728  cd /shared/
+  729  ls
+  730  touch client
+  731  ls
+  732  ll
+  733  cat server
+  734  cat serverA
+  735  vi 
+  736  vi serverA
+  737  ll
+  738  chmod 777 serverA
+  739  cd
+  740  useradd intex
+  741  smbpasswd intex
+  742  yum install samba
+  743  systemctl restart smb nmb
+  744  journalctl -xe
+  745  ls
+  746  ls /
+  747  rm -rf /paap /unnati/ /shared/
+  748  rm -rf /paap/ /unnati/ /shared/
+  749  cd /
+  750  ls
+  751  rm -rf p
+  752  rm -rf paap 
+  753  cd p
+  754  cd paap 
+  755  ls
+  756  cd ..
+  757  rm -rf /paap 
+  758  ls -Z paap 
+  759  ls
+  760  mkdir paap/ni -p
+  761  ls
+  762  rm -rf *paap*
+  763  cat /var/log/messages | grep paap
+  764  date
+  765  umount /paap 
+  766  rm -rf paap/
+  767  ls
+  768  rm -rf paap/
+  769  cat /var/log/messages | grep paap
+  770  date
+  771  cd
+  772  yum remove httpd
+  773  yum install httpd
+  774  cd /var/lib/
+  775  ls
+  776  cd
+  777  cd /etc/httpd/conf.d/
+  778  ls
+  779  cp /usr/share/doc/httpd-2.4.6/httpd-vhosts.conf new.conf
+  780  vim new.conf 
+  781  yum whatprovides vim
+  782  yum install vim-enhanced-7.4.629-8.el7_9.x86_64
+  783  yum removeall vim-enhanced-7.4.629-8.el7_9.x86_64
+  784  yum remove vim-enhanced-7.4.629-8.el7_9.x86_64
+  785  vim 
+  786  yum install vim-enhanced-7.4.629-8.el7_9.x86_64
+  787  yum repolist
+  788  vim a
+  789  cat /var/log/messages
+  790  cat /var/log/messages 
+  791  cat /var/log/messages | grep vim
+  792  cat /var/log/messages | grep vim > error
+  793  cat error 
+  794  rm -rf error 
+  795  cd
+  796  systemctl restart httpd
+  797  systemctl enable httpd
+  798  poweroff 
+  799  mysql -u neha -p
+  800  yum install mariadb
+  801  mysql -u neha -p
+  802  cd /var/lib/
+  803  ls
+  804  mysql -u neha -p -h server.unnati.com
+  805  cd
+  806  mysql -u neha -p -h server.unnati.com
+  807  yum install targetcli
+  808  lsblk
+  809  fdisk /dev/sdb
+  810  lsblk
+  811  partprobe /dev/sdb1
+  812  lsblk
+  813  yum install targetcli
+  814  systemctl start targetcli
+  815  systemctl start target
+  816  systemctl enable target
+  817  targetcli
+  818  firewall-cmd --permanent --remove-port=3260/tcp
+  819  firewall-cmd --reload
+  820  targetcli
+  821  systemctl restart target
+  822  firewall-cmd --permanent --add-port=3260/tcp
+  823  firewall-cmd --reload
+  824  lsblk
+  825  targetcli
+  826  systemctl restart target
+  827  firewall-cmd --permanent --add-port=3260/tcp
+  828  firewall-cmd --reload
+  829  firewall-cmd --list-al
+  830  firewall-cmd --list-all
+  831  rpm -qa | grep iscsi-initiator-utils
+  832  yum install iscsi-initiator-utils
+  833  vi /etc/iscsi/initiatorname.iscsi 
+  834  man iscsiadm
+  835   iscsiadm --mode discoverydb --type sendtargets --portal 192.168.80.129 --discover
+  836  man iscsiadm
+  837   iscsiadm --mode node --targetname iqn.2021-02.unnati.com.--portal 192.168.80.129:3260 --login
+  838   iscsiadm --mode node --targetname iqn.2021-02.unnati.com.--vportal 192.168.80.129:3260 --login
+  839   iscsiadm --mode node --targetname iqn.2021-02.unnati.com.-- portal 192.168.80.129:3260 --login
+  840  iscsiadm --mode node --targetname iqn.2021-02.unnati.com --portal
+  841  iscsiadm --mode node --targetname iqn.2021-02.unnati.com --portal 192.168.80.129:3260 --login
+  842  systemctl restart iscsid
+  843  systemctl restart iscsi
+  844  systemctl enable iscsi
+  845  systemctl enable iscsid
+  846  lsblk
+  847  systemctl reboot
+  848  targetcli
+  849  yum remove targetcli
+  850  mna iscsiadm
+  851  man iscsiadm
+  852  yum install iscsiadm
+  853  lsblk
+  854  fdisk /dev/sdb
+  855  lsblk
+  856  partprobe /dev/sdb1
+  857  mkfs.xfs /dev/sdb1
+  858  mkdir /test123
+  859  vi /etc/fstab 
+  860  mount -v
+  861  mount -av
+  862  df -hT
+  863  iscsiadm --mode node --targetname iqn.2021-02.unnati.com --portal 192.168.80.129:3260 --logout
+  864  df -hT
+  865  reboot
+  866  lsblk
+  867  df -hT
+  868  cd /dev/sdb1 
+  869  cat /dev/sdb1
+  870  cd /etc/
+  871  cd /test123/
+  872  ls
+  873  mkdir aniket
+  874  ls
+  875  mkdir aa
+  876  ll
+  877  lsblk
+  878  cd /test123/
+  879  ls
+  880  cd
+  881  ls
+  882  ls -lZ /test123 
+  883  lsblk 
+  884  cd /test123 
+  885  ls
+  886  ll
+  887  cd
+  888  lll
+  889  l
+  890  df -hT
+  891  mount -av
+  892  cd /test123 
+  893  ls
+  894  ll
+  895  cd
+  896  ls
+  897  iscsid
+  898  iscsi-iname 
+  899  vi /etc/iscsi/initiatorname.iscsi 
+  900  iscsi
+  901  lsblk
+  902  mount
+  903  iscsiadm cd
+  904  targetcli
+  905  yum install targetcli
+  906  targetcli
+  907  ls
+  908  ll
+  909  cat /etc/hosts
+  910  journalctl -xe
+  911  mount -av
+  912  lsblk
+  913  vi /etc/fstab
+  914  lsblk
+  915  mount -av
+  916  vi /etc/fstab
+  917  mount -av
+  918  reboot
+  919  ls
+  920  lsblk
+  921  yum remove iscsiadm
+  922  cat history > aa
+  923  cat history > aaa
+  924  history > aaaa

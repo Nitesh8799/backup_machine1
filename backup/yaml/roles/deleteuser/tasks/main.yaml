@@ -1,0 +1,6 @@
+---
+ - name: delete user {{ username }}
+   user:
+           name: "{{ username }}"
+           state: "{{ state }}"
+   notify: delete_home

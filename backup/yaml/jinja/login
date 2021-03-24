@@ -1,0 +1,51 @@
+  UID USER               PROC PWD-LOCK PWD-DENY  LAST-LOGIN GECOS
+    0 root                140                   Mar16/20:35 root
+    1 bin                   0                               bin
+    2 daemon                0                               daemon
+    3 adm                   0                               adm
+    4 lp                    0                               lp
+    5 sync                  0                               sync
+    6 shutdown              0                   Mar16/21:15 shutdown
+    7 halt                  0                               halt
+    8 mail                  0                               mail
+   11 operator              0                               operator
+   12 games                 0                               games
+   14 ftp                   0                               FTP User
+   27 mysql                 0                               MySQL Server
+   29 rpcuser               1                               RPC Service User
+   32 rpc                   1                               Rpcbind Daemon
+   48 apache                5                               Apache
+   59 tss                   0                               Account used by the trousers package to sandbox the tcsd daemon
+   74 sshd                  0                               Privilege-separated SSH
+   81 dbus                  1                               System message bus
+  193 systemd-resolve       0                               systemd Resolver
+  988 clevis                0                               Clevis Decryption Framework unprivileged user
+  989 saslauth              0                               Saslauthd user
+  990 setroubleshoot        0                               
+  991 unbound               0                               Unbound DNS resolver
+  992 rngd                  1                               Random Number Generator Daemon
+  993 chrony                0                               
+  994 sssd                  0                               User for sssd
+  995 cockpit-wsinstance    0                               User for cockpit-ws instances
+  996 cockpit-ws            0                               User for cockpit web service
+  997 libstoragemgmt        1                               daemon account for libstoragemgmt
+  998 polkitd               1                               User for polkitd
+  999 systemd-coredump      0                               systemd Core Dumper
+ 1000 admin                 7                         11:03 Admin
+ 9999 vidya                 0                               
+10001 pallavi               0                               
+10002 xxx                   0                               
+10003 nitesh                0                               
+10005 arijit                0                               
+10006 jupiter               0                               
+10008 Joe                   0                               
+10009 hi                    0                               
+10010 illuminati            0                               
+10011 harry                 0                               
+10012 Natasha               0                               
+10013 tom                   0                               
+10014 charlie               0                               
+10015 boat                  0                               
+10016 rhel8                 0                               
+10017 rhel7                 0                               
+65534 nobody                0                               Kernel Overflow User

@@ -1,0 +1,9 @@
+---
+ - name: copy ssh key
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: copy ssh key
+             command: ssh-copy-id admin@machine2
+                     

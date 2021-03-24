@@ -1,0 +1,17 @@
+---
+ - name: play2
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: installing webserver
+             apt: name=apache2 state=installed
+             when: ansible_system=="Linu"
+             #when: ansible_distribution=="Ubuntu"
+             ##when: ansible_os_family=="Debian"
+
+           - name: installing webserver
+             yum: name=httpd state=installed
+             when: ansible_system=="Linux"
+             #when: ansible_distribution=="CentOS"
+             #when: ansible_os_family=="RedHat"

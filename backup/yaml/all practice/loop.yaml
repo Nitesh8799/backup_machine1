@@ -1,0 +1,26 @@
+---
+ - name: loop examples
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: adding user
+             user:
+                     name: "{{item.user}}"
+                     state: absent
+                     uid: "{{item.uid}}"
+                     comment: "{{item.comment}}"
+
+             loop:  
+                     - {"user":"pitbull","uid":"11222","comment":"hi pitbull here"}
+                     - {"user":"lunchmoney","uid":"11223","comment":"hi lunchmoney here"}
+                     - {"user":"lewis","uid":"11224","comment":"hi lewis here"}
+
+           - name: deleting user directory
+             file:
+                     name: "{{item.home}}"
+                     state: absent
+             loop:
+                     - {"home":"/home/pitbull"}         
+                     - {"home":"/home/lunchmoney"}         
+                     - {"home":"/home/lewis"}         

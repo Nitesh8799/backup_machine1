@@ -1,0 +1,13 @@
+1. create a partition of size 800Mb , format it with EXT4 file system, mount it with any folder persistenlty ( in fstab )
+2. create a partitiion of size 500MB , make it available as swap 
+
+(in one playbook 3 to 5)
+3. create 2 partition of 1Gb each
+4. create 2 PVs from those availble partition , then create one VG of size 2Gb
+5. create 1 LV of size 1200Mb and mount it persistently with XFS on any directory ( in fstab )
+
+---- use all this thing create a playbook
+
+modules- creation of partiton :- parted , 
+	 creaion of lvm :- lvg , lvol 
+

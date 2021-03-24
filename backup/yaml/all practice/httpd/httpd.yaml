@@ -1,0 +1,58 @@
+---
+ - name: installing in httpd and configure the files
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: installing httpd
+             yum:
+                     name: httpd
+                     state: installed
+             tags: install
+                     
+           - name: starting the httpd
+             service:
+                     service: httpd
+                     state: started
+                     enabled: yes
+             tags: start
+
+           - name: allow http in firewalld
+             firewalld:
+                     service: http
+                     permanent: yes
+                     state: enabled
+                     immediate: yes
+             tags: firewalld
+
+           - name: change httpd port
+             lineinfile:
+                      path: /etc/httpd/conf/httpd.conf
+                      regexp: '^Listen '
+                      insertafter: '^#Listen '
+                      line: Listen 8080
+             tags: port   
+
+           - name: add port in firewalld
+             firewalld:
+                      permanent: yes
+                      port: 8080/tcp
+                      immediate: yes
+                      state: enabled
+             tags: tcp
+             notify: newindex
+                
+
+
+           - name: restarting the httpd
+             service:
+                      service: httpd
+                      state: restarted
+
+
+   handlers:
+           - name: newindex
+             copy:
+                      content: "now this is saad lamjarred with mal habibi"
+                      dest: /var/www/html/index.html
+

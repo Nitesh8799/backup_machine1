@@ -1,0 +1,18 @@
+---
+ - name: using insert after and before module at a time for two diff files
+   hosts: all
+   become: yes
+   tasks:
+           # - name: Ensure the default Apache port is 8080
+             #    lineinfile:
+                     #path: /home/admin/yaml/all/lineinfile/httpd.conf
+                        #regexp: '^Listen '
+                        # insertafter: '^Listen '
+                        #                        line: Listen 8080
+
+             - name: Ensure we have our own comment added to /etc/services
+               lineinfile:
+                           path: /home/admin/yaml/all/lineinfile/aniket
+                           regexp: '^ this'
+                           insertbefore: '^this'
+                           line: ' port for http by default'

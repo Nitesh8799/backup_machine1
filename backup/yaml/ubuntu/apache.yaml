@@ -1,0 +1,13 @@
+---
+ - name: Ubuntu & Centos
+   hosts: debian
+   user: admin
+   become: yes
+   #become_user: admin
+   tasks:
+           - name: nodes
+             user:
+                        name: santosh1
+                        state: present
+                        shell: /bin/bash
+

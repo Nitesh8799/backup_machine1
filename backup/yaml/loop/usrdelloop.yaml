@@ -1,0 +1,41 @@
+---
+ - name: trying loop
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - name: remove files 
+             user:
+                     name: "{{ item.username }}"
+                     shell: "{{ item.shell }}"
+                     uid: "{{ item.userid }}"
+                     group: "{{ item.group }}"
+                     comment: "{{ item.comment }}"
+                     state: absent
+
+             loop:          
+                     - {"username":"jubin","shell":"/sbin/nologin","userid":"10020","group":"admin","comment":"FIRST USER","home":" /home/jubin "}
+                     - {"username":"darshan","shell":"/sbin/nologin","userid":"10030","group":"admin","comment":"TEST USER","home":" /home/darshan "}
+                     - {"username":"arijit","shell":"/bin/bash","userid":"10040","group":"root","comment":"LAB USER","home":" /home/arijit "}
+                     - {"username":"mithoon","shell":"/bin/bash","userid":"10050","group":"wheel","comment":"ADMIN USER","home":" /home/mithoon "}
+
+---
+ - name: suer
+   user: admin
+   hosts: client
+   become: yes
+   tasks:
+
+           - name: files hnome
+             file:
+                     name: "{{ item }}"
+                     state: absent
+             loop:
+                     - /home/arijit
+                     - /home/darshan
+                     - /home/mithoon
+                     - /home/user123
+                     - /home/user234
+                     - /home/user345
+                     - /home/user456
+                     - /home/jubin

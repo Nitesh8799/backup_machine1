@@ -1,0 +1,36 @@
+---
+ - name: using loop & handlers 
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+       - name: installing httpd
+         yum:
+               name: "{{ item }}"
+               state: installed
+         notify: useradd_boat
+         
+         loop:
+               - httpd
+               - vsftpd
+               - vim
+               - nano 
+
+       - name: restarting httpd
+         service:
+               service: httpd
+               state: started
+         notify: groupadd_headphone
+
+   
+   handlers:
+       - name: useradd_boat
+         user:
+               name: boat
+               state: present
+       
+       - name: groupadd_headphone
+         group:
+               name: headphone
+               state: present
+                 

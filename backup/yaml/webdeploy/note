@@ -1,0 +1,6 @@
+webdeploy.yaml
+ - is used for installing httpd
+	       add new port to and assign that port to httpd as a default port ( edited in file /etc/httpd/conf/httpd.conf - Listen 28080 )
+	       and the same port added in firewalld and restart the service and
+	       
+		the webserver is deployed successfully		

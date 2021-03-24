@@ -1,0 +1,53 @@
+---
+ - name: deploying webserver 
+   hosts: client
+   become: yes 
+   user: admin
+   tasks:
+           - name: Installing Apache httpd service 
+             yum:
+                name: httpd
+                state: installed
+             notify: httpRestart
+           
+             #      - name: using cmd 
+             #command: "semanage port -a -t http_port_t -p tcp 27090"
+
+           - name: Adding port 27090/tcp to firewall
+             firewalld:
+                port: 27090/tcp
+                permanent: yes
+                state: enabled
+                immediate: yes
+          
+           - name: Port 27090/tcp is setting up for default http port
+             lineinfile:
+                path: /etc/httpd/conf/httpd.conf
+                regexp: '^Listen'
+                insertafter: '^#Listen'
+                line: Listen 27090
+             notify: httpRestart
+          
+           - name: Putting webpage on document root
+             copy:
+                src: /var/www/html/index.html
+                dest: /var/www/html/index.html     
+
+           - name: Restarting the firewalld service
+             service:
+                service: firewalld
+                state: started
+                enabled: yes
+         
+                #       - name: Restarting the httpd service
+                #service:
+                #service: httpd
+                #state: restarted
+                #enabled: yes
+
+   handlers:               
+           - name: httpRestart
+             service:
+                service: httpd
+                state: restarted
+                enabled: yes

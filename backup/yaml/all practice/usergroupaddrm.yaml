@@ -1,0 +1,33 @@
+---
+ - name: adding and removing user and group with id's and password
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+      - name: adding group with new gid
+        group:
+                name: singer
+                state: absent
+                # gid: 1234
+      
+      - name: adding user with singer group as primary group
+        user:
+                name: darshan
+                state: absent
+                #           uid: 10099 
+                #                group: singer 
+        
+      - name: delete home directory of darshan
+        file:
+                name: /home/darshan
+                state: absent
+
+                #if directory not deleted then use acl
+                #
+                # - name: adding acl to home directory of darshan
+        #   acl:
+                #path: /home/darshan
+                #entity: singer
+                # etype: group
+                #   permissions: r--
+                #state: absent       

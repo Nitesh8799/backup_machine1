@@ -1,0 +1,33 @@
+---
+ - name: firewalld
+   hosts: all
+   become: yes
+   tasks:
+           - name: add http service to firewall
+             firewalld:
+                     service: http
+                     permanent: yes
+                     immediate: yes
+                     state: enabled
+
+           - name: add 8081/tcp port into firewall
+             firewalld:
+                     port: 8081/tcp
+                     permanent: yes
+                     state: disabled     
+
+           - name: reload firewalld
+             service:
+                     service: firewalld
+                     state: restarted
+
+           - name: removing https service from firewall
+             firewalld:
+                     service: https
+                     permanent: yes
+                     state: disabled    
+           
+           - name: reload firewalld
+             service:
+                     service: firewalld
+                     state: restarted          

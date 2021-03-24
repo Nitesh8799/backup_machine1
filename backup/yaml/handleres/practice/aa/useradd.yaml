@@ -1,0 +1,18 @@
+---
+ - name: useradd
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: useradd charlie
+             user:
+                     name: charlie
+                     state: present
+             notify: Add_directory_ramsy
+
+   handlers:
+           - name: Add_directory_ramsy
+             file:
+                     name: /home/charlie/ramsy
+                     state: directory
+                         

@@ -1,0 +1,24 @@
+os CentOS
+parsed True
+file_path /etc/redhat-release
+variety RedHat
+version 8
+release NA
+dist.version  8.3
+
+cores 1
+count   1
+p_core  1
+vcpus   1
+name    VMware Virtual Platform 
+serial  VMware-56 4d 59 6c c2 83 b5 6e-de da 3d 70 77 cb 4c 9e
+uuid    6c594d56-83c2-6eb5-deda-3d7077cb4c9e 
+version None
+
+nodename machine1.unnati.com 
+osfamily  RedHat
+mgr     dnf
+
+time {'year': '2021', 'month': '03', 'weekday': 'Wednesday', 'weekday_number': '3', 'weeknumber': '11', 'day': '17', 'hour': '11', 'minute': '14', 'second': '20', 'epoch': '1615959860', 'date': '2021-03-17', 'time': '11:14:20', 'iso8601_micro': '2021-03-17T05:44:20.301339Z', 'iso8601': '2021-03-17T05:44:20Z', 'iso8601_basic': '20210317T111420301339', 'iso8601_basic_short': '20210317T111420', 'tz': 'IST', 'tz_offset': '+0530'}
+
+ens {'device': 'ens33', 'macaddress': '00:0c:29:cb:4c:9e', 'mtu': 1500, 'active': True, 'module': 'e1000', 'type': 'ether', 'pciid': '0000:02:01.0', 'speed': 1000, 'promisc': False, 'ipv4': {'address': '192.168.80.139', 'broadcast': '192.168.80.255', 'netmask': '255.255.255.0', 'network': '192.168.80.0'}, 'ipv6': [{'address': 'fe80::dbe9:c910:df2a:d0fd', 'prefix': '64', 'scope': 'link'}], 'features': {'rx_checksumming': 'off', 'tx_checksumming': 'on', 'tx_checksum_ipv4': 'off [fixed]', 'tx_checksum_ip_generic': 'on', 'tx_checksum_ipv6': 'off [fixed]', 'tx_checksum_fcoe_crc': 'off [fixed]', 'tx_checksum_sctp': 'off [fixed]', 'scatter_gather': 'on', 'tx_scatter_gather': 'on', 'tx_scatter_gather_fraglist': 'off [fixed]', 'tcp_segmentation_offload': 'on', 'tx_tcp_segmentation': 'on', 'tx_tcp_ecn_segmentation': 'off [fixed]', 'tx_tcp_mangleid_segmentation': 'off', 'tx_tcp6_segmentation': 'off [fixed]', 'generic_segmentation_offload': 'on', 'generic_receive_offload': 'on', 'large_receive_offload': 'off [fixed]', 'rx_vlan_offload': 'on', 'tx_vlan_offload': 'on [fixed]', 'ntuple_filters': 'off [fixed]', 'receive_hashing': 'off [fixed]', 'highdma': 'off [fixed]', 'rx_vlan_filter': 'on [fixed]', 'vlan_challenged': 'off [fixed]', 'tx_lockless': 'off [fixed]', 'netns_local': 'off [fixed]', 'tx_gso_robust': 'off [fixed]', 'tx_fcoe_segmentation': 'off [fixed]', 'tx_gre_segmentation': 'off [fixed]', 'tx_gre_csum_segmentation': 'off [fixed]', 'tx_ipxip4_segmentation': 'off [fixed]', 'tx_ipxip6_segmentation': 'off [fixed]', 'tx_udp_tnl_segmentation': 'off [fixed]', 'tx_udp_tnl_csum_segmentation': 'off [fixed]', 'tx_gso_partial': 'off [fixed]', 'tx_sctp_segmentation': 'off [fixed]', 'tx_esp_segmentation': 'off [fixed]', 'tx_udp_segmentation': 'off [fixed]', 'tls_hw_rx_offload': 'off [fixed]', 'fcoe_mtu': 'off [fixed]', 'tx_nocache_copy': 'off', 'loopback': 'off [fixed]', 'rx_fcs': 'off', 'rx_all': 'off', 'tx_vlan_stag_hw_insert': 'off [fixed]', 'rx_vlan_stag_hw_parse': 'off [fixed]', 'rx_vlan_stag_filter': 'off [fixed]', 'l2_fwd_offload': 'off [fixed]', 'hw_tc_offload': 'off [fixed]', 'esp_hw_offload': 'off [fixed]', 'esp_tx_csum_hw_offload': 'off [fixed]', 'rx_udp_tunnel_port_offload': 'off [fixed]', 'tls_hw_tx_offload': 'off [fixed]', 'rx_gro_hw': 'off [fixed]', 'tls_hw_record': 'off [fixed]'}, 'timestamping': ['tx_software', 'rx_software', 'software'], 'hw_timestamp_filters': []}

@@ -1,0 +1,33 @@
+---
+ - name: uninstalling anything
+   hosts: client
+   become: yes
+   vars:
+           ya: httpd
+           ps: present
+           ab: absent
+           var1: installed
+           rm: removed
+           st: started
+           rl: reloaded
+   tasks:
+           - name: uninstalling {{ ya }}
+             yum:
+                     name: "{{ item }}"
+                     state: "{{ rm }}"
+             loop:
+                     - "{{ ya }}"
+
+           - name: remove form firewalld
+             firewalld:
+                     service: http
+                     permanent: yes
+                     state: disabled
+                     immediate: yes           
+
+           - name: remove port no. 28080/tcp
+             firewalld:
+                     port: 28080/tcp
+                     permanent: yes
+                     state: disabled
+                     immediate: yes    

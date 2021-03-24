@@ -1,0 +1,16 @@
+---
+ - name: trying to auto update yum using cron
+   hosts: server
+   become: yes
+   #  user: admin
+   tasks:
+           - name: Creates a cron file under /etc/cron.d
+             cron:
+                     name: yum autoupdate
+                     weekday: "6"
+                     minute: "49"
+                     hour: "16"
+                     user: root
+                     job: "YUMINTERACTIVE=0 /usr/sbin/yum-autoupdate"
+                     cron_file: ansible_yum-autoupdate
+

@@ -1,0 +1,10 @@
+---
+ - hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: change index output
+             template:
+                     src: list.j2 
+                     dest: /var/www/html/index.html
+

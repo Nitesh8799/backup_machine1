@@ -1,0 +1,30 @@
+---
+ - name: deploy webserver
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: install httpd 
+             yum:
+                     name: httpd
+                     state: installed
+
+           - name: started httpd
+             service:
+                     service: httpd
+                     state: started
+                     enabled: yes
+
+           - name: allow http into firewalld
+             firewalld:
+                     service: http
+                     permanent: yes
+                     state: enabled
+                     immediate: yes
+
+           - name: copy source content from home
+             copy:
+                     content: "saad lamjarred songs are playing"
+                     dest: /var/www/html/index.html
+
+               

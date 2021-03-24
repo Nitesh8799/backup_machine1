@@ -1,0 +1,13 @@
+---
+ - name: new acl
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: giving rwx charlie
+             acl:
+                     path: /home/admin/yaml/acl/newacl.yaml
+                     entity: charlie
+                     etype: user
+                     # permissions: rwx
+                     state: absent

@@ -1,0 +1,12 @@
+---
+ - hosts: server
+   user: admin
+   become: yes
+   vars:
+           - cars: [ 'Mercedes','ford','nissan','volvo','mustang','mini']
+   tasks:
+           - name: A loop example
+             template:
+                     src: cars.j2
+                     dest: /var/www/html/index.html
+

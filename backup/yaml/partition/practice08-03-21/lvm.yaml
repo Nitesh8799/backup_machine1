@@ -1,0 +1,51 @@
+---
+ - name: task2
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: create 1gb partition
+             parted:
+                  device: /dev/sdb
+                  number: 3 
+                  state: present
+                  part_start: 1827MiB
+                  part_end: 2851MiB
+
+           - name: create 2nd 1gb partition
+             parted:
+                  device: /dev/sdb
+                  number: 4
+                  state: present
+                  part_start: 2852MiB
+                  part_end: 3876MiB
+
+           - name: vg create
+             lvg:
+                  vg: myvg
+                  pvs: /dev/sdb3,/dev/sdb4
+           
+           - name: lvcreate
+             lvol:
+                  vg: myvg
+                  lv: mylv
+                  size: 1200M
+
+           - name: filesystem
+             filesystem:
+                  fstype: xfs
+                  dev: /dev/myvg/mylv
+        
+           - name: folder
+             file:
+                  name: /mputty
+                  state: directory
+
+           - name: mount
+             mount:
+                  path: /mputty
+                  src: /dev/myvg/mylv
+                  fstype: xfs
+                  state: mounted
+                    
+

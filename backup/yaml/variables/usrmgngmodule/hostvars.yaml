@@ -1,0 +1,20 @@
+---
+ - name: Using hostlevel variables in ansible playbook
+   hosts:
+           - client
+           - server
+   become: yes
+   vars:
+           state1: installed
+           state2: started
+   tasks:
+           - name : Installing some packages
+             yum:
+                     name: "{{ package1 }}"
+                     state: "{{ state1 }}"
+                   
+           - name: Starting service
+             service:
+                     service: "{{ service1 }}"
+                     state: "{{ state2 }}"
+                     enabled: yes

@@ -1,0 +1,24 @@
+---
+ - name: try
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+       - name: create user rancho
+         user:
+              name: rancho
+              uid: 20020
+              home: /home/rancho
+              group: admin
+              state: present
+         notify: useradd_virus
+
+   handlers:
+        - name: useradd_virus
+          user:
+              name: virus
+              uid: 20021
+              home: /mnt/
+              group: root,admin
+              state: present
+

@@ -1,0 +1,30 @@
+---
+ - name: checking servers
+   hosts: servers
+   become: yes
+   user: admin
+   tasks:
+           # - block:    
+           - name: Installing Apache2 on ubuntu
+             apt:
+                  name: apache2
+                  state: latest
+             when: ansible_os_family=="Debian"
+        
+           - name: print the msg
+             debug:
+                  msg: Apache2 successfully installed on Ubuntu
+             when: ansible_os_family=="Debian"
+      
+             #        rescue:
+
+           - name: Installing Httpd on Centos
+             yum:
+                  name: httpd
+                  state: installed
+             when: ansible_os_family=="RedHat"
+        
+           - name: print the msg
+             debug:
+                  msg: Apache Httpd successfully installed on Centos
+             when: ansible_os_family=="RedHat"

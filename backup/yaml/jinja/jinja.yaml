@@ -1,0 +1,13 @@
+---
+ - name: trying jinja template
+   hosts: server
+   user: admin
+   become: yes
+   vars:
+           - a_admin : nitesh
+   tasks:
+           - name: calling the template and motd
+             template:
+                     src: template.j2
+                     dest: /home/admin/yaml/jinja/file.txt
+

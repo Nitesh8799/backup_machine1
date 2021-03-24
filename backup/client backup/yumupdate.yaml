@@ -1,0 +1,17 @@
+---
+ - name: installing anything
+   hosts: server
+   become: yes
+   vars:
+           ya: httpd
+           ps: present
+           ab: absent
+           var1: installed
+           rm: removed
+           st: started
+           rst: restarted
+   tasks:
+           - name: upgrading programmes
+             yum:
+                     name: "*"
+                     state: latest

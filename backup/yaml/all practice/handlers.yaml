@@ -1,0 +1,32 @@
+---
+ - name: handlers
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: run vsftpd server
+             service:
+                     service: vsftpd
+                     state: restarted
+             notify: install_1
+
+           - name: create partition
+             parted:
+                     device: /dev/sdb
+                     part_start: 1MiB
+                     part_end: 800MiB
+                     number: 1
+                     state: present
+
+           - name: create pvs
+             lvg:
+                     vg: myvg.services
+                     pvs: /dev/sda1
+             
+   handlers:
+           - name: install_1
+             yum:
+                     name: nano
+                     state: installed
+
+                  

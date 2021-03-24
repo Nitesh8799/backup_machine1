@@ -1,0 +1,13 @@
+---
+ - hosts: server
+   become: yes
+   user: admin
+   vars:
+           - server_ip : '192.168.80.139/24'
+           - user: 'Super_Joker'
+   tasks:
+           - name: change index output
+             template:
+                     src: template.j2 
+                     dest: /var/www/html/index.html
+

@@ -1,0 +1,30 @@
+---
+ - name: bloack , rescue and always
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - block:
+                     - name: installing httpd block
+                       yum:
+                               name: httpdd
+                               state: installed
+                     - name: msgs 
+                       debug:
+                               msg: hi jackass its block        
+
+             rescue:
+                     - name: installing httpd rescue
+                       yum:
+                               name: httpd
+                               state: installed
+                     - name: msgs       
+                       debug:
+                               msg: hi mfs its rescue
+                                       
+
+             always:
+                     - name: restarting httpd
+                       service:
+                               service: httpd
+                               state: restarted

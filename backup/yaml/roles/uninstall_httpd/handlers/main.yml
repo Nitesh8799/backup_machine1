@@ -1,0 +1,8 @@
+---
+ - name: httpd_firewalld 
+   firewalld:
+           service: http
+           permanent: yes
+           state: disabled
+           immediate: yes
+

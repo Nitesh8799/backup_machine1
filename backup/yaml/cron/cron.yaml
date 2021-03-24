@@ -1,0 +1,42 @@
+---
+ - name: crontab
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           # - name: "adding some files"
+           #  cron:
+           #          name: "mkdir"
+           #          minute: "37"
+           #          hour: "18"
+           #          job: "mkdir /home/admin/yaml/ayuasdss -p"
+
+           #- name: "adding"
+           #  cron:
+           #          name: "add"
+           #          minute: "46"
+           #          hour: "23"
+           #          job: "useradd maratha"
+
+          
+           #  - name: "useradel"
+           #  cron:
+           #          name: "removing user"
+           #          minute: "08"
+           #          hour: "17"
+           #          job: "sudo sh /home/admin/yaml/job.sh"  
+
+           - name: "using crontab for runnig the ansible-playbook"  
+             cron:
+                      name: "removing httpd"
+                      minute: "50"
+                      hour: "06"
+                      day: "*"
+                      job: "/usr/bin/ansible-playbook /home/admin/yaml/httpd/remove.yaml"
+
+                     #   - name: "using crontab to install webserver"
+                     # cron:
+                     #name: "Deploying webserver using cron"
+                     #minute: "18"
+                     #hour: "21"
+                     #job: "ansible-playbook /home/admin/yaml/webdeploy/webdeploy..yaml"          

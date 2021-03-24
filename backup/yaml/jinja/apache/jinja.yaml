@@ -1,0 +1,13 @@
+---
+ - name: tyring to change conf file
+   hosts: server
+   become: yes
+   user: admin
+   vars:
+        apache_vhost:
+             - {servername: "machine1.unnati.com", documentroot: "/var/www/html/", serveradmin: "nitesh@machine1.unnati.com"}
+   tasks:
+             - name: try to change conf file
+               template:
+                       src: template.j2
+                       dest: /etc/httpd/conf.d/httpd-vhosts.conf 

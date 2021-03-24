@@ -1,0 +1,16 @@
+---
+ - name: ignore errors tasks
+   hosts: client
+   become: yes
+   user: admin
+   ignore_errors: yes
+   tasks:
+           - name: adding user nifty
+             user:
+                     name: nifty
+                     state: absent
+
+           - name: creating directory dell123
+             file:
+                     name: /dell123
+                     state: absent

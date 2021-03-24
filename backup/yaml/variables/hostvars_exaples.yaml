@@ -1,0 +1,20 @@
+---
+ - name: Example of host vars
+   hosts:
+           - server
+           - client
+   vars:
+           state1: installed
+           state2: started
+   become: yes
+   tasks:
+           - name: installing packages
+             yum:
+                     name: "{{ package1 }}"
+                     state: "{{ state1 }}"
+
+           - name: starting service
+             service:
+                     name: "{{ service1 }}"
+                     state: "{{ state2 }}"
+                     enabled: yes          

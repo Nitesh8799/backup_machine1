@@ -1,0 +1,25 @@
+---
+ - name: Error Management Study
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - block:
+               - name: installing required packages
+                 yum:
+                    name: httpd123
+                    state: installed
+               - name: sampletask for example
+                 debug:
+                    msg: This is sampletask from Block  
+             rescue:
+               - name: Installing required packages from rescue
+                 yum:
+                    name: httpd
+                    state: installed
+               - name: sampletask for example of rescue
+                 debug:
+                    msg: This is sampletask from Rescue          
+
+
+

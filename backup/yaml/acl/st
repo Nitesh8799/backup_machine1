@@ -1,0 +1,26 @@
+- name: Removes the ACL for Joe on a specific file
+  acl:
+    path: /etc/foo.conf
+    entity: joe
+    etype: user
+    state: absent
+
+- name: Sets default ACL for joe on /etc/foo.d/
+  acl:
+    path: /etc/foo.d/
+    entity: joe
+    etype: user
+    permissions: rw
+    default: yes
+    state: present
+
+- name: Same as previous but using entry shorthand
+  acl:
+    path: /etc/foo.d/
+    entry: default:user:joe:rw-
+    state: present
+
+- name: Obtain the ACL for a specific file
+  acl:
+    path: /etc/foo.conf
+  register: acl_info

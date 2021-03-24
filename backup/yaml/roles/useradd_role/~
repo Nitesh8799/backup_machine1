@@ -1,0 +1,4 @@
+---
+# tasks file for useradd_role
+ - name: check when condition
+   

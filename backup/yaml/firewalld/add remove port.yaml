@@ -1,0 +1,22 @@
+---
+ - name: firewalld
+   hosts: all
+   become: yes
+   tasks:
+           #   - name: add 8081/tcp port into firewall
+           #     firewalld:
+           #           port: 8081/tcp
+           ##           permanent: yes
+           #          state: disabled    
+
+              - name: remove 8081/tcp port from firewall
+                firewalld:
+                      port: 8081/tcp
+                      permanent: yes
+                      state: disabled
+                      immediate: yes
+
+              - name: reload firewalld
+                service:
+                      service: firewalld
+                      state: restarted    

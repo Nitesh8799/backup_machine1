@@ -1,0 +1,29 @@
+---
+ - hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - name: Trying to access facts
+             debug:
+                     msg: "{{ ansible_local.custom.city.tourism }}"
+             
+           - name: Trying to use condition
+             copy:
+                     content: "Local facts are accessable"
+                     dest: /etc/motd
+             when: ansible_local.custom.city.capital == "Nagpur" or "Mumbai"  
+     
+           - name: Create directory
+             file:
+                name: /etc/mumbai
+                state: directory
+             when: ansible_local.custom.city.tourism == "Aurangabad" or "Mumbai"  
+             
+           - name: Create cronjob
+             cron:
+                     name: creating cronjob
+                     minute: "04"
+                     hour: "07"
+                     user: admin
+                     job: "mkdir /etc/mumbai/sarah1"
+             when: ansible_local.custom.condition.ip == "192"

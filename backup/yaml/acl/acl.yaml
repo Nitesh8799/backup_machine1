@@ -1,0 +1,20 @@
+---
+ - name: using acl's
+   hosts: all
+   become: yes
+   tasks:
+           #  - name: setfacl
+           #  acl:
+           #          path: /home/admin/yaml/all/acl
+           #          entity: jupiter
+           # etype: group
+           #                 permissions: rx
+           #         state: present
+
+
+            - name: removing acl
+              acl:
+                     path: /home/admin/yaml/all/acl
+                     entity: jupiter
+                     etype: group
+                     state: absent

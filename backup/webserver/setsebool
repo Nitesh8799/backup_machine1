@@ -1,0 +1,29 @@
+ SELinux is preventing httpd from name_bind access on the tcp_socket port 28080. For complete SELinux messages >
+Feb 25 16:53:57 machine1 setroubleshoot[4188]: SELinux is preventing httpd from name_bind access on the tcp_socket port 28080.
+
+                                               *****  Plugin bind_ports (92.2 confidence) suggests   ************************
+
+                                               If you want to allow httpd to bind to network port 28080
+                                               Then you need to modify the port type.
+                                               Do
+                                               # semanage port -a -t PORT_TYPE -p tcp 28080
+                                                   where PORT_TYPE is one of the following: http_cache_port_t, http_port_t, jboss_management_port_t, jboss_me>
+
+                                               *****  Plugin catchall_boolean (7.83 confidence) suggests   ******************
+
+                                               If you want to allow nis to enabled
+                                               Then you must tell SELinux about this by enabling the 'nis_enabled' boolean.
+
+                                               Do
+                                               setsebool -P nis_enabled 1
+
+                                               *****  Plugin catchall (1.41 confidence) suggests   **************************
+
+                                               If you believe that httpd should be allowed name_bind access on the port 28080 tcp_socket by default.
+                                               Then you should report this as a bug.
+                                               You can generate a local policy module to allow this access.
+                                               Do
+                                               allow this access for now by executing:
+                                               # ausearch -c 'httpd' --raw | audit2allow -M my-httpd
+                                               # semodule -X 300 -i my-httpd.pp
+

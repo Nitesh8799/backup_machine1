@@ -1,0 +1,7 @@
+---
+ - name: uninstalling httpd
+   yum:
+           name: httpd
+           state: removed
+   notify: httpd_firewalld 
+           

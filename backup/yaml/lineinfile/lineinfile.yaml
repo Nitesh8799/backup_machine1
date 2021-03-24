@@ -1,0 +1,25 @@
+---
+ - name: using lineinfile module
+   hosts: all
+   become: yes
+   tasks:
+           #    - name: insert in file 
+           #  lineinfile:
+           #              path: /home/admin/yaml/all/lineinfile/file
+           #              regexp: '^SELINUX='
+           #              line: SELINUX=enforcing
+  
+                         #           - name: Ensure SELinux is set to enforcing mode
+                         # lineinfile:
+                         #    path: /etc/selinux/config
+                         #regexp: '^SELINUX='
+                         #  line: SELINUX=enforcing
+
+          - name: Replace a localhost entry with our own
+            lineinfile:
+                        path: /home/admin/yaml/all/lineinfile/nit
+                        regexp: '^127\.0\.0\.1'
+                        line: 127.0.0.1 localhost
+                        owner: root
+                        group: root
+                        mode: '0777'               

@@ -1,0 +1,10 @@
+---
+ - name: useradd with password
+   hosts: debian
+   user: admin
+   become: yes
+   tasks:
+       - name: useradd debian
+         file:
+            name: /tmp/debian
+            state: directory

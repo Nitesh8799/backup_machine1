@@ -1,0 +1,8 @@
+---
+ - name: calling roles
+   hosts: server
+   become: yes
+   user: admin
+   roles:
+           - myroles
+           - useradd_role

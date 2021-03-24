@@ -1,0 +1,16 @@
+---
+ - name: crontab
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: "using crontab to install webserver"
+             cron:
+                     name: "Deploying webserver using cron"
+                     minute: "51"
+                     hour: "21"
+                     weekday: "1"
+                     month: "3"
+                     day: "1"
+                     job: "/usr/bin/ansible-playbook /home/admin/yaml/webdeploy/webdeploy.yaml " 
+                     #"ansible-playbook /home/admin/yaml/webdeploy/webdeploy..yaml"          

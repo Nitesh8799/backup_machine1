@@ -1,0 +1,7 @@
+---
+ - name: calling uninstall_httpd roles
+   hosts: server
+   user: admin
+   become: yes
+   roles:
+           - uninstall_httpd

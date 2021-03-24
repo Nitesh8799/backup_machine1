@@ -1,0 +1,19 @@
+---
+ - name: trying loop
+   hosts: client
+   user: admin
+   become: yes
+   tasks:
+           - name: adding user using loop
+             user:
+                     name: "{{ item.username }}"
+                     state: present
+                     shell: "{{ item.shell }}"
+                     uid: "{{ item.userid }}"
+                     group: "{{ item.group }}"
+                     comment: "{{ item.comment }}"
+             loop:
+                     - {"username":"jubin","shell":"/sbin/nologin","userid":"10020","group":"admin","comment":"FIRST USER"}
+                     - {"username":"darshan","shell":"/sbin/nologin","userid":"10030","group":"admin","comment":"TEST USER"}
+                     - {"username":"arijit","shell":"/bin/bash","userid":"10040","group":"root","comment":"LAB USER"}
+                     - {"username":"mithoon","shell":"/bin/bash","userid":"10050","group":"wheel","comment":"ADMIN USER"}

@@ -1,0 +1,7 @@
+---
+ - name: calling roles 3 for httpd
+   hosts: server
+   user: admin
+   become: yes
+   roles:
+           - install_httpd

@@ -1,0 +1,48 @@
+#Playbook 2
+#Create 2 partitions of 1 GB each
+#Create 2 PVs from those available partitions, then create one VG of size 2 GB
+#Create 1 LV of size 1200MB and mount it persistently with XFS on any directory
+---
+ - name: playbook2
+   hosts: server
+   user: admin
+   become: yes
+   tasks:
+            - name: 1st 1GiB partition
+              parted:
+                     device: /dev/sdb
+                     part_start: 1304MiB
+                     part_end: 2328MiB 
+                     number: 3
+                     state: present
+
+            - name: 2nd 1GiB partition
+              parted:
+                     device: /dev/sdb
+                     part_start: 2329MiB
+                     part_end: 3353MiB
+                     number: 4
+                     state: present
+
+            - name: create vg 2 gb
+              lvg:
+                      pvs: /dev/sdb3,/dev/sdb4
+                      vg: myvg
+
+            - name: create lv 1200mb
+              lvol:
+                      lv: mylv
+                      vg: myvg
+                      size: 1200M
+
+            - name: filesystem xfs
+              filesystem:
+                      fstype: xfs
+                      dev: /dev/myvg/mylv
+
+            - name: mount
+              mount:
+                      src: /dev/myvg/mylv
+                      path: /tmp
+                      fstype: xfs
+                      state: mounted

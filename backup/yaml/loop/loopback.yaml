@@ -1,0 +1,26 @@
+---
+ - name: restarting services in loop
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: restarting httpd
+             service:
+                     service: httpd
+                     state: restarted
+           - name: restarting firewalld
+             yum:
+                     name: "{{ item }}"
+                     state: installed
+             loop:
+                     - httpd      
+
+           - name: restart multiple services in a loop
+             service:
+                     name: "{{ item }}"
+                     state: restarted
+                     enabled: true
+                     become: true
+             loop:
+                     - http
+                     - firewalld           

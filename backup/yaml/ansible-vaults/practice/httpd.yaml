@@ -1,0 +1,22 @@
+---
+ - name: try to catch the little thing about ansible-vaults
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: useradd sanam
+             user:
+                     name: sanam
+                     uid: 12990
+                     group: admin
+                     shell: /sbin/nologin
+                     state: present
+             notify: jay
+
+   handlers:  
+            - name: jay
+              user:
+                     name: jay_sing
+                     uid: 12991
+                     group: root
+                     state: present

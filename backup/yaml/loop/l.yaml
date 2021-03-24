@@ -1,0 +1,15 @@
+---
+ - name: loop service old
+   hosts: client
+   become: yes
+   user: admin
+   tasks:
+           - name: restart multiple services in a loop
+             service:
+                     name: "{{ item }}"
+                     state: restarted
+                     #           enabled: true
+                     #become: true
+             loop:
+                     - httpd
+                     - firewalld           

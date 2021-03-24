@@ -1,0 +1,21 @@
+---
+ - name: hostvars
+   user: admin
+   hosts:
+           - server
+           - client
+   become: yes
+   vars:
+           state1: installed
+           state2: started
+   tasks:
+           - name: installing pkgs
+             yum:
+                     name: "{{ pkg1 }}"
+                     state: "{{ state1 }}"
+
+           - name: starting service
+             service:
+                     service: "{{ service1 }}"  
+                     state: "{{ state2 }}"
+                     enabled: yes        

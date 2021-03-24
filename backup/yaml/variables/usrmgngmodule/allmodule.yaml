@@ -1,0 +1,59 @@
+---
+ - name: all module till i learnt
+   hosts: all
+   become: yes
+   tasks:
+           - name: creating a directory
+             file:
+                  name: /file
+                  state: directory 
+                  mode: 774 
+                  owner: admin 
+                  group: admin
+
+           - name: creating a file
+             file: 
+               name: /file/test.txt
+               state: touch 
+               mode: 774 
+               owner: admin 
+               group: root
+
+           - name: adding a group
+             group: 
+               name: super 
+               state: present 
+               gid: 8989
+
+           - name: adding a user
+             user: 
+               name: vidya 
+               state: present 
+               group: super 
+               uid: 9999 
+               home: /home/vidya
+
+           - name: copy fstab to vidya's home directory
+             copy: 
+               src: /etc/fstab
+               dest: /home/vidya/
+
+           - name: installing apache httpd
+             yum: 
+               name: httpd 
+               state: installed
+
+           - name: starting apache httpd
+             service: 
+               service: httpd 
+               state: started 
+               enabled: yes
+
+           - name: allow in firewall  
+             firewalld: 
+               service: http 
+               permanent: yes
+               immediate: yes
+               state: enabled
+
+            

@@ -1,0 +1,59 @@
+---
+ - name: deploying webserver 
+   hosts: client
+   become: yes 
+   user: admin
+   tasks:
+           - name: Installing Apache httpd service 
+             yum:
+                name: httpd
+                state: installed
+
+           - name: Starting the httpd service
+             service:
+                service: httpd
+                state: started
+                enabled: yes
+            
+           - name: Putting webpage on document root
+             copy:
+                src: /var/www/html/index.html
+                dest: /var/www/html/index.html     
+
+                #- name: Restarting firewalld
+                #service:
+                #service: firewalld
+                #state: started
+                #enabled: yes
+
+           - name: Adding port 28080/tcp to firewall
+             firewalld:
+                port: 28080/tcp
+                permanent: yes
+                state: enabled
+                immediate: yes
+           
+           - name: Port 28080/tcp is setting up for default http port
+             lineinfile:
+                path: /etc/httpd/conf/httpd.conf
+                regexp: '^Listen'
+                insertafter: '^#Listen'
+                line: Listen 28080
+                
+           - name: Restarting the firewalld service
+             service:
+                service: firewalld
+                state: started
+                enabled: yes
+         
+                #  - name: Reload firewall service
+                # service:
+                #service: firewalld     
+                #state: restarted
+                
+           - name: Restarting the httpd service
+             service:
+                service: httpd
+                state: restarted
+                enabled: yes
+

@@ -1,0 +1,7 @@
+---
+ - name: copy source content
+   copy:
+           src: /home/admin/yaml/roles/callroles1.yaml
+           path: /home/admin/yaml/roles/callroles5.yaml
+   notify: run_script
+                   

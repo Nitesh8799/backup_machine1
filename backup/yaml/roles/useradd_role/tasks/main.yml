@@ -1,0 +1,15 @@
+---
+# tasks file for useradd_role
+ - block:
+        - name: check when condition
+          yum:
+            name: "{{ var1 }}"
+            state: latest
+          when: ansible_distribution_major_version=="8"
+   rescue:
+        - name: check when condition
+          yum:
+            name: "{{ var1 }}"
+            state: latest
+          when: ansible_distrubution_major_version=="8"     
+   

@@ -1,0 +1,24 @@
+os {{ansible_distribution}}
+parsed {{ansible_distribution_file_parsed}}
+file_path {{ansible_distribution_file_path}}
+variety {{ansible_distribution_file_variety}}
+version {{ansible_distribution_major_version}}
+release {{ansible_distribution_release}}
+dist.version  {{ansible_distribution_version}}
+
+cores {{ansible_processor_cores}}
+count   {{ansible_processor_count}}
+p_core  {{ansible_processor_threads_per_core}}
+vcpus   {{ansible_processor_vcpus}}
+name    {{ansible_product_name}} 
+serial  {{ansible_product_serial}}
+uuid    {{ansible_product_uuid}} 
+version {{ansible_product_version}}
+
+nodename {{ansible_nodename}} 
+osfamily  {{ansible_os_family}}
+mgr     {{ansible_pkg_mgr}}
+
+time {{ansible_date_time}}
+
+ens {{ansible_ens33}}

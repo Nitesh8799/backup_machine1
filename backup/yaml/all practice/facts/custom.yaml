@@ -1,0 +1,16 @@
+---
+ - hosts: server
+   user: admin
+   become: yes
+   tasks:
+           - name: Tring to access facts
+             debug:
+                msg: "{{ ansible_local.custom.city.tourism }}"
+
+           - name: Trying to use condition
+             copy:
+                content: "Hi this is Machine_1 അ"
+                dest: /etc/motd
+             when: ansible_local.custom.city.capital == "Nagpur" or "Mumbai"
+
+

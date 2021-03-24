@@ -1,0 +1,12 @@
+---
+ - name: trying to acl to root
+   hosts: server
+   become: yes
+   user: admin
+   tasks:
+           - name: get acl to root for admin and ansible user
+             acl:
+                       path: /root
+                       entity: admin
+                       etype: user
+                       state: absent
